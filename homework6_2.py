@@ -15,11 +15,11 @@ class PythonOrgSearch(unittest.TestCase):
         driver.get("http://automationpractice.com/index.php")
         # ждем 3 секунды
         time.sleep(3)
-        # #получение элемента страницы с id search_query_top)
+        # #получение элемента страницы с id search_query_top, т.е поисковая строка)
         elem = driver.find_element_by_id("search_query_top")
         # ждем 3 секунды
         time.sleep(3)
-        # набор слова blooseee в найденном элементе
+        # набор слова blooseee в найденном элементе,которое не должно найти
         elem.send_keys("bloosee")
         # ждем 3 секунды
         time.sleep(3)
@@ -72,7 +72,7 @@ class PythonOrgSearch(unittest.TestCase):
         elem.clear()
         # ждем 3 секунды
         time.sleep(3)
-        # набор слова pycon в найденном элементе
+        # набор слова dress в найденном элементе
         elem.send_keys("dress")
         # ждем 3 секунды
         time.sleep(3)
@@ -97,7 +97,7 @@ class PythonOrgSearch(unittest.TestCase):
         elem = self.driver.find_element(By.ID, "wishlist_button")
         elem.click()
         time.sleep(3)
-        # Ищем кнопку крестик, которая свернёт окно о том, что нужно зарегистрироваться
+        # Ищем кнопку крестик, которая свернёт окно о том, что нужно зарегистрироваться, чтоб добавить в избранное
         elems = self.driver.find_elements(By.CLASS_NAME, 'fancybox-close')
         # Если кнопка найдена, то кликаем на неё
         if len(elems) != 0:
